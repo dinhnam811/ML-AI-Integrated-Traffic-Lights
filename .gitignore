@@ -1,0 +1,26 @@
+# MATLAB & Simulink ignore list
+*.asv
+*.autosave
+*.bak
+*.mat
+slprj/
+simulink_cache/
+work/
+*.mex*
+*.mlappinstall
+*.mlpkginstall
+.DS_Store
+
+# Ignore temp & auto-gen MATLAB/Simulink files
+*.asv
+*.autosave
+*.bak
+*.mat
+*.mex*
+*.mlappinstall
+*.mlpkginstall
+.DS_Store
+slprj/
+simulink_cache/
+work/
+
