@@ -1,0 +1,6 @@
+MATLAB add-ons required for the project:
+- Computer Vision Toolbox
+- Image Processing Toolbox
+- Deep Learning Toolbox
+- Simulink
+- Computer Vision Toolbox for YOLO v4 Object Detection
