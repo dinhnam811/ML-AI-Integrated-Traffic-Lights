@@ -55,7 +55,7 @@ while hasFrame(v) && ishandle(hFig)
     countsPerType(end+1,:) = counts; 
 end
 T = array2table(countsPerType, 'VariableNames', targetLabels);
-T.time_s = timeList; 
+T.time_s = timeList
 T = movevars(T, 'time_s', 'before', 1);  
 
 
