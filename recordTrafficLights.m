@@ -1,4 +1,4 @@
-function recordTrafficLightsWithPreempt(inCsv, outCsv, nGreen, nYellow, nRed)
+function recordTrafficLights(inCsv, outCsv, nGreen, nYellow, nRed)
 % recordTrafficLightsWithPreempt
 % Reads vehicle_counts CSV, creates repeating light states by row counts,
 % then applies ambulance preemption
@@ -7,7 +7,7 @@ function recordTrafficLightsWithPreempt(inCsv, outCsv, nGreen, nYellow, nRed)
 % Usage: recordTrafficLightsWithPreempt("vehicle_counts.csv","light_recorder.csv",7,3,8)
 
     if nargin < 5
-        error("Usage: recordTrafficLightsWithPreempt(inCsv,outCsv,nGreen,nYellow,nRed)");
+        error("Usage: recordTrafficLights(inCsv,outCsv,nGreen,nYellow,nRed)");
     end
 
     % Load input
