@@ -3,16 +3,16 @@
 clear; clc; close all;
 
 
-videoPath = "traf.mov";   
+videoPath = "video.mp4";   
 
 
-detector = yolov4ObjectDetector("csp-darknet53-coco");
+detector = yolov4ObjectDetector("tiny-yolov4-coco");
 
 
 
 v = VideoReader(videoPath);
 
-targetLabels = ["car","truck","bus","police_car"]; 
+targetLabels = ["car","truck","bus","police_car","AMBULANCE"]; 
 
 timeList  = [];  
 countsPerType = zeros(0, numel(targetLabels)); 
@@ -50,14 +50,14 @@ while hasFrame(v) && ishandle(hFig)
     title(hAx, sprintf('Time: %.2f s', v.CurrentTime));
     drawnow limitrate;
 
-    % Save results
+
     timeList(end+1,1) = v.CurrentTime;
     countsPerType(end+1,:) = counts; 
 end
 T = array2table(countsPerType, 'VariableNames', targetLabels);
-T.time_s = timeList;  % add time column
-T = movevars(T, 'time_s', 'before', 1);  % put time as first column
+T.time_s = timeList; 
+T = movevars(T, 'time_s', 'before', 1);  
 
-% Save to CSV
+
 writetable(T, "vehicle_counts.csv");
 disp("Saved vehicle_counts.csv");
